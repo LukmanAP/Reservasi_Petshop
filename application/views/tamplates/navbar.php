@@ -14,12 +14,16 @@
 				<li class="nav-item">
 					<a class="nav-link"  href="<?php  echo site_url('cat/mycat/'.$this->session->userdata('user_id')); ?>">MyCat</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Reservasi</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Hotel</a>
-				</li>
+				<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					transaction
+				</a>
+				<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+					<li><a class="dropdown-item" href="<?php echo site_url('transaction/tampil_transaksi_grooming/'.$this->session->userdata('user_id')) ?>">Grooming</a></li>
+					<li><a class="dropdown-item" href="#">Hotel</a></li>
+				</ul>
+        		</li>
+				
 			<?php } else {}?>
 		</ul>
 		

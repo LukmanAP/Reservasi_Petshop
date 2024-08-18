@@ -20,5 +20,9 @@
 			$query = $this->db->get('service_grooming');
 			return $query->row();
 		}
+
+		public function tambah_reservasi($data, $table) {
+			return $this->db->insert($table, $data);
+		}
 	}
 ?>
