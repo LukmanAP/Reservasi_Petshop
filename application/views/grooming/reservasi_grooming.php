@@ -3,26 +3,37 @@
 		<h1><?php echo $grooming->name ?></h1>
 	</div>
 	<hr>
-
-	<div>
-		<div class="mb-3">
-			<label for="" class="form-label">Kucing Anda:</label>
-			<input type="text" class="form-control">
+	<form action="">
+		<div>
+			<div class="mb-3">
+				<label for="" class="form-label">Kucing Anda:</label>
+				<select name="" id="" class="form-control">
+					<option value="" disabled selected class="text-muted">Pilih kucing anda</option>
+					<?php foreach ($cats as $cat): ?>
+						<option value="<?php echo $cat->cat_id; ?>"><?php echo $cat->name; ?></option>
+					<?php endforeach; ?>
+				</select>
+			</div>
+			<div class="mb-3">
+				<label for="" class="form-label">Tanggal:</label>
+				<input type="date" name="tanggal" class="form-control" min="<?php echo date('Y-m-d'); ?>" required>
+			</div>
+			<div class="mb-3">
+				<label for="" class="form-label">Bank</label>
+				<select name="" id="" class="form-control">
+					<option value="" disabled selected class="text-muted">Pilih Bank</option>
+					<option value="">BNI</option>
+					<option value="">BRI</option>
+					<option value="">BCA</option>
+				</select>
+			</div>
+			<div class="mb-3">
+				<label for="" class="form-label">Catatan:</label>
+				<textarea class="form-control" name="" id="" rows="3"></textarea>
+			</div>
 		</div>
-		<div class="mb-3">
-			<label for="" class="form-label">Tanggal:</label>
-			<input type="date" name="tanggal" class="form-control" min="<?php echo date('Y-m-d'); ?>" required>
-		</div>
-		<div class="mb-3">
-			<label for="" class="form-label">Bank</label>
-			<input type="text" class="form-control">
-		</div>
-		<div class="mb-3">
-			<label for="" class="form-label">Catatan:</label>
-			<textarea class="form-control" name="" id="" rows="3"></textarea>
-		</div>
-	</div>
-	
+		<button type="submit" class="btn btn-primary mt-3">Pesan Sekarang</button>
+	</form>
 </div>
 
 <script>

@@ -9,8 +9,9 @@
 			}
 		}
 
-		public function reservasi_grooming($id_grooming) {
+		public function reservasi_grooming($id_grooming,$user_id) {
 			$data['grooming'] = $this->model_grooming->reservasi_grooming($id_grooming);
+			$data['cats'] = $this->model_cat->data_cat($user_id);
 
 			$this->load->view('tamplates/header');
 			$this->load->view('tamplates/navbar');

@@ -25,7 +25,7 @@
 								<td><strong><div class="btn btn-sm btn-success"> Rp. <?php echo number_format($grm->price,0,',','.') ?></div></strong></td>
 							</tr>
 						</table>
-						<?php echo anchor('grooming/reservasi_grooming/'.$grm->id_grooming,'<div class="btn btn-sm btn-primary"> Reservasi</div>') ?>
+						<?php echo anchor('grooming/reservasi_grooming/'.$grm->id_grooming.'/'.$this->session->userdata('user_id'),'<div class="btn btn-sm btn-primary"> Reservasi</div>') ?>
 						<?php echo anchor('dashboard/index/','<div class="btn btn-sm btn-danger">Kembali</div>') ?>
 					</div>
 				</div>

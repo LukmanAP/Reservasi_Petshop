@@ -9,5 +9,11 @@
 				return false;
 			}
 		} 
+
+		public function data_cat($user_id) {
+			$result = $this->db->where('user_id',$user_id)->get('cats');
+
+			return $result->result();
+		}
 	}
 ?>
