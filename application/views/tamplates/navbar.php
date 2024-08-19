@@ -9,34 +9,42 @@
 		<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
-		<ul class="navbar-nav">
-			<?php if($this->session->userdata('name')) {?>
-				<li class="nav-item">
-					<a class="nav-link"  href="<?php  echo site_url('cat/mycat/'.$this->session->userdata('user_id')); ?>">MyCat</a>
-				</li>
-				<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					transaction
-				</a>
-				<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-					<li><a class="dropdown-item" href="<?php echo site_url('transaction/tampil_transaksi_grooming/'.$this->session->userdata('user_id')) ?>">Grooming</a></li>
-					<li><a class="dropdown-item" href="#">Hotel</a></li>
-				</ul>
-        		</li>
-				
-			<?php } else {}?>
-		</ul>
-		
+			<ul class="navbar-nav">
+				<?php if($this->session->userdata('name')) { ?>
+					<li class="nav-item">
+						<a href="<?php echo site_url('dashboard/index') ?>" class="nav-link">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="<?php echo site_url('cat/mycat/'.$this->session->userdata('user_id')); ?>">MyPet</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Transaction
+						</a>
+						<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+							<li><a class="dropdown-item" href="<?php echo site_url('transaction/tampil_transaksi_grooming/'.$this->session->userdata('user_id')) ?>">Grooming</a></li>
+							<li><a class="dropdown-item" href="#">Hotel</a></li>
+						</ul>
+					</li>
+				<?php } ?>
+			</ul>
+			
+			<ul class="navbar-nav ms-auto"> <!-- Tambahkan kelas ms-auto untuk memindahkan ke kanan -->
+				<?php if ($this->session->userdata('name')) { ?>
+					<li class="nav-item">
+						<div class="nav-link"><?php echo $this->session->userdata('name'); ?> -</div>
+					</li>
+					<li class="nav-item">
+						<?php echo anchor('auth/logout', 'Logout', ['class' => 'nav-link']); ?>
+					</li>
+				<?php } else { ?>
+					<li class="nav-item">
+						<?php echo anchor('auth/login', 'Login', ['class' => 'nav-link']); ?>
+					</li>
+				<?php } ?>
+			</ul>
 		</div>
-		<ul class="nav navbar-nav navbar-right">
-			<?php if ($this->session->userdata('name')) { ?>
-				<li><div><?php echo $this->session->userdata('name') ?>-</div> </li>
-				<li class="ml-2"><?php echo anchor('auth/logout','logout'); ?></li>
-			<?php } else {?>
-				<li><?php echo anchor('auth/login', 'login'); ?></li>
-
-			<?php } ?>
-		</ul>	
+		
 	</div>
 	</nav>
 </div>

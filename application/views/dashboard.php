@@ -14,7 +14,7 @@
         <!-- Grooming Card -->
         <div class="col-md-4 mb-4">
             <div class="card">
-                <img src="https://via.placeholder.com/500x300?text=Grooming" class="card-img-top" alt="Grooming">
+                <img src="<?php echo base_url().'assets/home/Grooming.jpg' ?>" class="card-img-top" alt="Grooming">
                 <div class="card-body text-center">
                     <h5 class="card-title">Grooming</h5>
                     
@@ -26,7 +26,7 @@
         <!-- Pet Hotel Card -->
         <div class="col-md-4 mb-4">
             <div class="card">
-                <img src="https://via.placeholder.com/500x300?text=Pet+Hotel" class="card-img-top" alt="Pet Hotel">
+                <img src="<?php echo base_url().'assets/home/hotel.jpg' ?>" class="card-img-top" alt="Pet Hotel">
                 <div class="card-body text-center">
                     <h5 class="card-title">Pet Hotel</h5>
                 
