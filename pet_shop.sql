@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Agu 2024 pada 21.05
+-- Waktu pembuatan: 19 Agu 2024 pada 12.38
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -80,14 +80,16 @@ INSERT INTO `service_grooming` (`id_grooming`, `name`, `description`, `price`, `
 --
 
 CREATE TABLE `transaction_grooming` (
-  `transaction_id` int(3) NOT NULL,
+  `transaction_id` int(11) NOT NULL,
   `user_id` int(3) NOT NULL,
   `grooming_id` int(3) NOT NULL,
   `id_cat` varchar(10) NOT NULL,
   `bank` varchar(10) NOT NULL,
   `notes` text NOT NULL,
   `date` date NOT NULL,
-  `transaction_date` date NOT NULL,
+  `transaction_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `payment_due_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `status` varchar(20) NOT NULL DEFAULT 'Belum Terbayar',
   `image` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -95,14 +97,9 @@ CREATE TABLE `transaction_grooming` (
 -- Dumping data untuk tabel `transaction_grooming`
 --
 
-INSERT INTO `transaction_grooming` (`transaction_id`, `user_id`, `grooming_id`, `id_cat`, `bank`, `notes`, `date`, `transaction_date`, `image`) VALUES
-(5, 1, 1, '1', '', 'swwe', '2024-08-20', '2024-08-18', ''),
-(6, 1, 1, '2', '', 'swweghggv', '2024-08-19', '2024-08-18', ''),
-(7, 1, 1, '2', 'BCA', 'jangan di mandikan', '2024-08-19', '2024-08-18', ''),
-(8, 1, 2, '5', 'BCA', 'jangan di mandiknan', '2024-08-19', '2024-08-18', ''),
-(9, 2, 1, '5', 'BCA', 'mbkb', '2024-08-20', '2024-08-18', ''),
-(10, 2, 2, '4', 'BRI', 'lknddjn', '2024-08-21', '2024-08-18', ''),
-(11, 2, 3, '4', 'BRI', 'ksabjsbds', '2024-08-23', '2024-08-18', '');
+INSERT INTO `transaction_grooming` (`transaction_id`, `user_id`, `grooming_id`, `id_cat`, `bank`, `notes`, `date`, `transaction_date`, `payment_due_date`, `status`, `image`) VALUES
+(29, 1, 2, '1', 'BCA', 'jangan di mandikan', '2024-08-20', '2024-08-19 10:38:21', '2024-08-19 10:38:21', 'Proses', 'I-Saku.jpg'),
+(30, 1, 1, '2', 'BRI', 'jangan di mandikan', '2024-08-20', '2024-08-19 05:37:34', '2024-08-20 05:37:34', 'Belum Terbayar', '');
 
 -- --------------------------------------------------------
 
@@ -181,7 +178,7 @@ ALTER TABLE `service_grooming`
 -- AUTO_INCREMENT untuk tabel `transaction_grooming`
 --
 ALTER TABLE `transaction_grooming`
-  MODIFY `transaction_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`

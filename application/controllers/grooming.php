@@ -26,6 +26,7 @@
 			$notes = $this->input->post('notes');
 			$date = $this->input->post('date');
 			$transaction_date = date('Y-m-d H:i:s');
+			$payment_due_date = date('Y-m-d H:i:s', strtotime($transaction_date . ' +24 hours'));
 
 			$data = array(
 				'user_id' => $user_id,
@@ -34,10 +35,14 @@
 				'date' => $date,
 				'bank' => $bank,
 				'notes' => $notes,
-				'transaction_date' => $transaction_date
+				'transaction_date' => $transaction_date,
+				'payment_due_date' => $payment_due_date,
 			);
 			
 			$this->model_grooming->tambah_reservasi($data, 'transaction_grooming');
+
+			redirect('transaction/tampil_transaksi_grooming/'.$user_id);
+			
 
 		}
 

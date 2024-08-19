@@ -13,5 +13,21 @@
 			return $result->result();
 		}
 
+		public function data_transaksi($transaction_id) {
+			$this->db->select('transaction_grooming.*, service_grooming.price');
+			$this->db->from('transaction_grooming');
+			$this->db->join('service_grooming', 'transaction_grooming.grooming_id = service_grooming.id_grooming');
+			$this->db->where('transaction_grooming.transaction_id', $transaction_id);
+			$result = $this->db->get();
+			// $result = $this->db->where('transaction_id',$transaction_id)->get('transaction_grooming');
+
+			return $result->result();
+		}
+
+		public function upload_bukti($transaction_id, $data) {
+			$this->db->where('transaction_id', $transaction_id);
+			return $this->db->update('transaction_grooming', $data);
+		}
+
 	}
 ?>
