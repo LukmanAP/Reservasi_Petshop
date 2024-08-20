@@ -37,6 +37,13 @@
 			$this->load->view('tamplates/footer');
 		}
 
+		public function hapus_data_cat($cat_id, $user_id) {
+			$where = array('cat_id' => $cat_id);
+			$this->model_cat->hapus_data_cat($where, 'cats');
+			redirect('cat/mycat/'.$user_id);
+
+		}
+
 		public function detail_edit_cat($cat_id) {
 			$data['cats'] = $this->model_cat->detail_edit_cat($cat_id);
 

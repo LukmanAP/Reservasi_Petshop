@@ -37,8 +37,8 @@
 					<input type="file" name="image" class="form-control">
 				</div>
 				<button type="submit" class="btn btn-primary mt-5 mb-5">Simpan</button>
-				<a href="" class="btn btn-danger">Hapus Data</a>
-				<a href="" class="btn btn-secondary">Kembali</a>
+				<a href="<?php echo site_url('cat/hapus_data_cat/'.$cat->cat_id).'/'.$this->session->user_id ?>" class="btn btn-danger">Hapus Data</a>
+				<a href="<?php echo site_url('cat/mycat/'.$this->session->userdata('user_id')) ?>" class="btn btn-secondary">Kembali</a>
 			</form>
 		</div>
 	<?php endforeach; ?>

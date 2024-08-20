@@ -46,7 +46,7 @@
 	<div class="row d-flex justify-content-center text-center mt-3 mb-5">
 		<?php foreach ($cats as $cat) : ?>
 			
-			<div class=" col-6 card mx-2 mt-3" style="width:18rem" href="" > 
+			<div class=" col-6 card mx-2 mt-3 pt-3" style="width:18rem" href="" > 
 			<a href="<?php echo site_url('cat/detail_edit_cat/'.$cat->cat_id); ?>" class="text-decoration-none text-dark">
 				<?php if (!empty($cat->image)) : ?>
                     <img src="<?php echo base_url().'./assets/cats/'.$cat->image ?>" alt="" class="card-img-top">

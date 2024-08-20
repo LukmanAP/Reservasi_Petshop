@@ -35,7 +35,7 @@
 							redirect('dashboard/index');
 							break;
 						case 2:
-							redirect('admin/dashboar_admin');
+							redirect('admin/dashboard/admin');
 							break;
 						default: break;
 					}
