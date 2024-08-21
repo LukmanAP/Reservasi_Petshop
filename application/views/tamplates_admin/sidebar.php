@@ -1,7 +1,7 @@
 <body id="page-top">
 
     <!-- Page Wrapper -->
-    <div id="wrapper" style="overflow: hidden; position: fixed; height: 100vh;">
+    <div id="wrapper">
 
         <!-- Sidebar -->
         <ul  class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" >
@@ -32,7 +32,7 @@
             </li>
 
 			<li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('admin/invoice') ?>">
+                <a class="nav-link" href="<?php echo base_url('admin/proses_pembayaran/tampil_pembayaran') ?>">
                     <i class="fas fa-fw fa-file-invoice"></i>
                     <span>Proses Pembayaran</span></a>
             </li>
