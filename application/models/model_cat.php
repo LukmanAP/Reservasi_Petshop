@@ -47,9 +47,6 @@
 			$this->db->update('users', $data);
 		}
 
-		public function detail($user_id) {
-			$result = $this->db->where('user_id', $user_id)->get('users');
-			return $result->result();
-		}
+		
 	}
 ?>

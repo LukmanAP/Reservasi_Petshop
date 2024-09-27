@@ -1,6 +1,11 @@
 <div class="container">
-	<div class="text-center mt-5">
-		<h1>Transaksi grooming</h1>
+	<div class="text-center">
+		<h1>Proses Pembayaran</h1>
+	</div>
+	<div class="d-flex flex-row-reverse bd-highlight mb-2">
+		<a href=""></a>
+			<button class=" btn-primary btn-sm">riwayat</button>
+		</a>
 	</div>
 
 	<table class="table table-bordered table-hover table-striped text-center">
@@ -15,7 +20,6 @@
 		<?php foreach ($transaksi as $tr) :?>
 			
 			<tr>
-			<a href="<?php echo site_url('transaction/pembayaran') ?>">
 				<td><?php echo $no++ ?></td>
 				<td><?php echo $tr->cat_name;?></td>
 				<td><?php echo $tr->name ?></td>
