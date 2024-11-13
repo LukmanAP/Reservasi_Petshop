@@ -46,6 +46,7 @@
 
 		public function detail_edit_cat($cat_id) {
 			$data['cats'] = $this->model_cat->detail_edit_cat($cat_id);
+			$data['riwayat_cat'] = $this->model_cat->riwayat_cat($cat_id);
 
 			$this->load->view('tamplates/header');
 			$this->load->view('tamplates/navbar');
@@ -58,6 +59,7 @@
 			$breed = $this->input->post('breed');
 			$age = $this->input->post('age');
 			$gender = $this->input->post('gender');
+			$sertivikat = $_FILES['sertivikat']['name'];
 			$image = $_FILES['image']['name'];
 
 			$data = array(
@@ -67,17 +69,30 @@
 				'gender' => $gender,
 			);
 
+			if ($sertivikat != '') {
+				$config['upload_path'] = './assets/sertiv';
+				$config['allowed_types'] = 'pdf';
+
+				$this->load->library('upload', $config);
+				if (!$this->upload->do_upload('sertivikat')) {
+					echo 'upload sertiv gagal !!'. $this->upload->display_errors(); die();
+				} else {
+					$sertivikat = $this->upload->data('file_name');
+					$data['sertivikat'] = $sertivikat;
+				}
+			}
+
 			if ($image != '') {
-				// Jika gambar diunggah
+				
 				$config['upload_path'] = './assets/cats';
 				$config['allowed_types'] = 'jpg|png|gif';
 		
 				$this->load->library('upload', $config);
 				if (!$this->upload->do_upload('image')) {
-					echo "Upload Gagal"; die();
+					echo 'Upload foto Gagal'. $this->upload->display_errors();; die();
 				} else {
 					$image = $this->upload->data('file_name');
-					$data['image'] = $image;  // Hanya tambahkan gambar ke array data jika gambar baru diunggah
+					$data['image'] = $image;  
 				}
 			}
 
@@ -90,15 +105,31 @@
 			$breed = $this->input->post('breed');
 			$age = $this->input->post('age');
 			$gender = $this->input->post('gender');
+			$sertivikat = $_FILES['sertivikat']['name'];
 			$image = $_FILES['image']['name'];
+			
 
-			if ($image=''){} else {
+			if ($sertivikat==''){} else {
+				$config['upload_path'] = './assets/sertiv';
+				$config['allowed_types'] = 'pdf';
+
+				$this->load->library('upload', $config);
+				if(!$this->upload->do_upload('sertivikat')) {
+					//Kosong
+				} else {
+					$sertivikat = $this->upload->data('file_name');
+				}
+			}
+
+			
+
+			if ($image==''){} else {
 				$config['upload_path'] = './assets/cats';
 				$config['allowed_types'] = 'jpg|png|gif';
 
 				$this->load->library('upload',$config);
 				if(!$this->upload->do_upload('image')) {
-
+					//Kosong
 				} else {
 					$image = $this->upload->data('file_name');
 				}
@@ -110,6 +141,7 @@
 				'breed' => $breed,
 				'age' => $age,
 				'gender' => $gender,
+				'sertivikat' => $sertivikat,
 				'image' => $image,
 				
 			);

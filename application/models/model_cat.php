@@ -31,6 +31,20 @@
 			return $result->result();
 		}
 
+		public function riwayat_cat($cat_id) {
+			$this->db->select('transaction_grooming.*, cats.name as cat_name, service_grooming.name');
+			$this->db->from('transaction_grooming');
+			$this->db->join('cats', 'cats.cat_id = transaction_grooming.id_cat');
+			$this->db->join('service_grooming', 'service_grooming.id_grooming = transaction_grooming.grooming_id');
+			$this->db->where('transaction_grooming.id_cat', $cat_id);
+			$this->db->where('transaction_grooming.status', "Selesai");
+
+	
+			$result = $this->db->get();
+			return $result->result();
+			
+		}
+
 		public function update_data_cat($data, $cat_id) {
 			$this->db->where('cat_id', $cat_id);
 			$this->db->update('cats', $data);

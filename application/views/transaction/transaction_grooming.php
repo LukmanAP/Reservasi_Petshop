@@ -3,8 +3,8 @@
 		<h1>Proses Pembayaran</h1>
 	</div>
 	<div class="d-flex flex-row-reverse bd-highlight mb-2">
-		<a href=""></a>
-			<button class=" btn-primary btn-sm">riwayat</button>
+		<a href="<?php echo site_url('transaction/tampil_riwayat_grooming/'.$this->session->userdata('user_id')); ?>">
+			<button class=" btn-primary btn-sm">riwayat haloo</button>
 		</a>
 	</div>
 

@@ -28,6 +28,10 @@
 				</select>
 			</div>
 			<div class="form-group mt-3">
+				<label for="">Sertivikat</label>
+				<input type="file" name="sertivikat" class="form-control">
+			</div>
+			<div class="form-group mt-3">
 				<label for="">Foto Kucing</label>
 				<input type="file" name="image" class="form-control">
 			</div>

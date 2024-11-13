@@ -33,6 +33,10 @@
 					</select>
 				</div>
 				<div class="form-group mt-3">
+					<label for="">Sertivikat</label>
+					<input type="file" name="sertivikat" class="form-control">
+				</div>
+				<div class="form-group mt-3">
 					<label for="">Foto Kucing</label>
 					<input type="file" name="image" class="form-control">
 				</div>
@@ -42,6 +46,38 @@
 			</form>
 		</div>
 	<?php endforeach; ?>
+
+	<div class="text-center">
+		<h1>Riwayat Perawatan</h1>
+	</div>
+
+	<table class="table table-bordered table-hover text-center">
+		<tr>
+			<th>No</th>
+			<th>Layanan Grooming</th>
+			<th>Catatan</th>
+			<th>Tanggal</th>
+			<th>Status</th>
+		</tr>
+		<?php $no = 1; ?>
+		<?php foreach ($riwayat_cat as $tr) :?>
+			
+			<tr>
+				<td><?php echo $no++ ?></td>
+				<td><?php echo $tr->name ?></td>
+				<td><?php echo $tr->notes ?></td>
+				<td><?php echo $tr->date ?></td>
+				<td>
+                <?php if ($tr->status == 'Selesai'): ?>
+					<div class="btn btn-primary btn-sm">Selesai</div>
+				<?php endif ?>
+					
+				
+			</tr>
+			
+		<?php endforeach; ?>
+	</table>
+
 
 
 

@@ -6,6 +6,14 @@
 
 			return $result->result();
 		}
+
+		public function grooming() {
+			return $this->db->get('service_grooming')->result();
+		}
+
+		public function reservasi_pethotel($data, $table) {
+			return $this->db->insert($table, $data);
+		}
 	}
 
 ?>

@@ -27,7 +27,8 @@ class Dashboard extends CI_Controller {
 	}
 
 	public function grooming() {
-		$data['grooming'] = $this->model_grooming->tampil_data()->result();
+		$data['grooming_paket'] = $this->model_grooming->tampil_data_paket()->result();
+		$data['grooming_satuan'] = $this->model_grooming->tampil_data_satuan()->result();
 
 		$this->load->view('tamplates/header');
 		$this->load->view('tamplates/navbar');

@@ -11,6 +11,15 @@
 			$this->load->view('tamplates/footer');
 		}
 
+		public function tampil_riwayat_grooming($user_id) {
+			$data['riwayat'] = $this->model_transaction->tampil_riwayat($user_id);
+
+			$this->load->view('tamplates/header');
+			$this->load->view('tamplates/navbar');
+			$this->load->view('transaction/riwayat',$data);
+			$this->load->view('tamplates/footer');
+		}
+
 		public function pembayaran($transaction_id) {
 			
 			$data['transaksi'] = $this->model_transaction->data_transaksi($transaction_id);
