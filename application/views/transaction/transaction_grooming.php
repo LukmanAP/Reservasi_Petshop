@@ -4,7 +4,7 @@
 	</div>
 	<div class="d-flex flex-row-reverse bd-highlight mb-2">
 		<a href="<?php echo site_url('transaction/tampil_riwayat_grooming/'.$this->session->userdata('user_id')); ?>">
-			<button class=" btn-primary btn-sm">riwayat haloo</button>
+			<button class=" btn-primary btn-sm">riwayat</button>
 		</a>
 	</div>
 
@@ -36,8 +36,6 @@
 					<div class="btn btn-warning btn-sm">Sedang di Proses</div>
                 <?php elseif ($tr->status == 'Sudah Terbayar'): ?>
                     <div class="btn btn-success btn-sm">Sudah Terbayar</div>
-                <?php elseif ($tr->status == 'Selesai'): ?>
-                    <div class="btn btn-primary btn-sm">Selesai</div>
                 <?php endif; ?>
             	</td>
 				

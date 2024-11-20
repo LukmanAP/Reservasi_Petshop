@@ -23,7 +23,7 @@
 						</a>
 						<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
 							<li><a class="dropdown-item" href="<?php echo site_url('transaction/tampil_transaksi_grooming/'.$this->session->userdata('user_id')) ?>">Grooming</a></li>
-							<li><a class="dropdown-item" href="#">Hotel</a></li>
+							<li><a class="dropdown-item" href="<?php echo site_url('pethotel/transaction_pethotel/tampil_transaction/'.$this->session->userdata('user_id')) ?>">Hotel</a></li>
 						</ul>
 					</li>
 				<?php } ?>

@@ -19,6 +19,7 @@
 			$grooming = $this->input->post('grooming');
 			$bank = $this->input->post('bank');
 			$notes = $this->input->post('notes');
+			$total_price = $this->input->post('total_price');
 
 			if ($date_range) {
 				// Memisahkan tanggal check-in dan check-out
@@ -45,6 +46,7 @@
 				'grooming_id' => $grooming, 
 				'bank' => $bank,
 				'notes' => $notes,
+				'total_price' => $total_price,
 				
 			);
 		
