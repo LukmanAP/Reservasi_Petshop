@@ -32,10 +32,28 @@
             </li>
 
 			<li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('admin/proses_pembayaran/tampil_pembayaran') ?>">
-                    <i class="fas fa-fw fa-file-invoice"></i>
-                    <span>Proses Pembayaran</span></a>
+				<button type="button" class="dropdown-toggle nav-link btn-group dropend" data-bs-toggle="dropdown" aria-expanded="false">
+				<i class="fa-solid fa-shower"></i> Grooming
+				</button>	
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_grooming/tampil_pembayaran') ?>">Proses Pembayaran</a></li>
+					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_grooming/transaksi_hari_ini') ?>">Transaksi Hari ini</a></li>
+					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_grooming/transaksi_keseluruhan') ?>">Transaksi Keseluruhan</a></li>
+					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_grooming/transaksi_selesai') ?>">Transaksi Selesai</a></li>
+				</ul>
             </li>
+
+			<li class="nav-item">
+				<button type="button" class="dropdown-toggle nav-link btn-group dropend" data-bs-toggle="dropdown" aria-expanded="false">
+				<i class="fa-solid fa-house"></i> Pet Hotel
+				</button>	
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_pethotel/tampil_pembayaran') ?>">Proses Pembayaran</a></li>
+					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_pethotel/transaksi_hari_ini') ?>">Transaksi hari ini</a></li>
+					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_pethotel/transaksi_berlangsung') ?>">Sedang berlangsung</a></li>
+				</ul>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

@@ -1,5 +1,16 @@
 <?php 
 	class Form_pethotel extends CI_Controller {
+		public function __construct()
+		{
+			parent:: __construct();
+
+			if ($this->session->userdata('role_id') != 1) {
+				redirect('auth/login');
+			}
+			
+		}
+
+
 		public function form($user_id) {
 
 			$data['cats'] = $this->model_pethotel->form_pethotel($user_id);
@@ -52,7 +63,9 @@
 		
 			// Panggil model untuk melakukan insert ke database
 			$this->model_pethotel->reservasi_pethotel($data, 'transaction_pethotel');
+			redirect('pethotel/transaction_pethotel/tampil_transaction/'.$this->session->userdata('user_id'));
 		}
+		
 		
 	}
 ?>

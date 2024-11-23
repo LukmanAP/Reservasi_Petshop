@@ -1,34 +1,40 @@
-<div class="container-fluid">
-	<h3>Proses Status Pembayaran</h3>
+<div class="container">
+	<h1 class="text-center">
+		<h1>Proses Pemabayaran Pethotel</h1>
+	</h1>
 
-	<table class="table table-bordered table-hover table-striped text-center">
+	<table class="table table-bordered table-hover text-center">
 		<tr>
 			<th>No</th>
-			<th>Nama Pemilik</th>
-			<th>Nama Pet</th>
-			<th>Layanan Grooming</th>
-			<th>TanggalGrooming</th>
+			<th>nama Pet</th>
+			<th>Tanggal Checkin</th>
+			<th>Tanggal Checkout</th>
 			<th>Bukti</th>
+			<th>Aksi</th>
 		</tr>
 		<?php if(empty($transaksi)): ?>
             <tr>
                 <td colspan="7" class="text-center">Tidak ada transaksi</td>
             </tr>
         <?php else: ?>
+
 			<?php $no = 1; ?>
-			<?php foreach ($transaksi as $tr) :?>
-				
+			<?php foreach ($transaksi as $tr) : ?>
 				<tr>
 					<td><?php echo $no++ ?></td>
-					<td><?php echo $tr->user_name ?></td>
-					<td><?php echo $tr->cat_name;?></td>
-					<td><?php echo $tr->grooming_name ?></td>
-					<td><?php echo $tr->date ?></td>
+					<td><?php echo $tr->cat_name ?></td>
+					<td><?php echo $tr->date_checkin ?></td>
+					<td><?php echo $tr->date_checkout ?></td>
 					<td>
-						<a href="#" data-bs-toggle="modal" data-bs-target="#imageModal<?php echo $tr->transaction_id; ?>">
-							<img style="height: 100px; width: 80px;" src="<?php echo base_url().'././assets/bukti/'.$tr->image?>" alt="">
+					<a href="#" data-bs-toggle="modal" data-bs-target="#imageModal<?php echo $tr->transaction_id; ?>">
+							<img style="height: 100px; width: 80px;" src="<?php echo base_url().'././assets/bukti_pethotel/'.$tr->image?>" alt="">
 						</a>
-					</td>			
+					</td>
+					<td>
+					<?php if ($tr->status == 'Proses'): ?>
+						<div class="btn btn-primary btn-sm">Selesai</div>
+					<?php endif ?>
+					</td>
 				</tr>
 
 				<div class="modal fade" id="imageModal<?php echo $tr->transaction_id; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -39,10 +45,10 @@
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
-							<img src="<?php echo base_url('assets/bukti/'.$tr->image); ?>" alt="Bukti Pembayaran" style="width: 100%;">
+							<img src="<?php echo base_url('assets/bukti_pethotel/'.$tr->image); ?>" alt="Bukti Pembayaran" style="width: 100%;">
 							<div class="d-flex justify-content-between">
 								<div>
-									<a href="<?php echo site_url('admin/transaction_grooming/update_status/'.$tr->transaction_id); ?>">
+									<a href="<?php echo site_url('admin/transaction_pethotel/update_status/'.$tr->transaction_id); ?>">
 										<button class="btn btn-warning mt-2">Cocok</button>
 									</a>
 								</div>
@@ -59,10 +65,10 @@
 				</div>
 				
 			<?php endforeach; ?>
+
 		<?php endif; ?>
+
 		
+
 	</table>
-
-	<!-- Modal -->
-
 </div>

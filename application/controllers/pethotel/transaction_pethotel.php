@@ -70,6 +70,7 @@
 
 				$this->model_pethotel->upload_bukti($transaction_id, $data);
 			}
+
 			redirect('pethotel/transaction_pethotel/tampil_transaction/'.$this->session->userdata('user_id'));
 		}
 

@@ -24,9 +24,9 @@
 			<h4>
 				<?php 
 					if ($food_cost==0) {
-						echo "Bawa makan sendiri";
+						echo " - ";
 					} else {
-						echo "Rp.". number_format($food_cost);
+						echo "- Rp.". number_format($food_cost);
 					}
 				?>
 			</h4>
