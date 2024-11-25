@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Nov 2024 pada 16.01
+-- Waktu pembuatan: 25 Nov 2024 pada 08.53
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -103,12 +103,16 @@ CREATE TABLE `transaction_grooming` (
 
 INSERT INTO `transaction_grooming` (`transaction_id`, `user_id`, `grooming_id`, `id_cat`, `bank`, `notes`, `date`, `transaction_date`, `payment_due_date`, `status`, `image`) VALUES
 (42, 1, 6, '2', 'BNI', 'Pemesanan Pertama', '2024-10-09', '2024-10-08 07:59:02', '2024-10-09 07:59:02', 'Belum Terbayar', ''),
-(43, 1, 2, '7', 'BCA', 'kljkhg', '2024-10-09', '2024-10-08 08:08:48', '2024-10-09 08:08:48', 'Belum Terbayar', ''),
+(43, 1, 2, '7', 'BCA', 'kljkhg', '2024-11-23', '2024-11-23 14:04:19', '2024-11-23 14:04:19', 'Selesai', '7c44307a66c1458511ca2365db4c07211.jpg'),
 (44, 1, 2, '11', 'BRI', 'n nmbjh', '2024-10-11', '2024-10-08 13:35:59', '2024-10-08 13:35:59', 'Selesai', '7c44307a66c1458511ca2365db4c0721.jpg'),
 (45, 1, 6, '11', 'BRI', 'eere', '2024-10-09', '2024-10-08 17:15:07', '2024-10-08 17:15:07', 'Selesai', 'hotel1.jpg'),
-(46, 1, 2, '10', 'BNI', '', '2024-10-10', '2024-10-08 17:15:22', '2024-10-08 17:15:22', 'Selesai', 'KRS.png'),
-(47, 1, 6, '2', 'BCA', '', '2024-10-09', '2024-10-08 17:15:31', '2024-10-08 17:15:31', 'Selesai', 'default1.jpg'),
-(48, 1, 6, '7', 'BRI', 'lukmasn', '2024-11-14', '2024-11-20 04:35:07', '2024-11-20 04:35:07', 'Proses', 'unnamed.png');
+(46, 1, 2, '10', 'BNI', '', '2024-10-10', '2024-11-24 14:05:05', '2024-11-24 06:45:35', 'Sudah Terbayar', 'KRS.png'),
+(47, 1, 6, '2', 'BCA', '', '2024-10-09', '2024-11-23 14:17:58', '2024-11-23 14:17:58', 'Selesai', 'default1.jpg'),
+(48, 1, 6, '7', 'BRI', 'lukmasn', '2024-11-24', '2024-11-24 06:46:56', '2024-11-24 06:46:56', 'Sudah Terbayar', 'unnamed.png'),
+(49, 1, 2, '8', 'BNI', 'llukmaskasasasSAsas', '2024-11-21', '2024-11-24 14:05:08', '2024-11-24 06:45:54', 'Sudah Terbayar', '7c44307a66c1458511ca2365db4c07212.jpg'),
+(50, 1, 3, '2', 'BCA', 'halo lukman', '2024-11-23', '2024-11-24 06:47:07', '2024-11-24 06:47:07', 'Sudah Terbayar', '7c44307a66c1458511ca2365db4c07213.jpg'),
+(51, 1, 6, '2', 'BCA', 'lukan', '2024-11-23', '2024-11-23 14:05:37', '2024-11-23 14:05:37', 'Sudah Terbayar', '7c44307a66c1458511ca2365db4c07214.jpg'),
+(52, 1, 6, '8', 'BNI', 'halo semua', '2024-11-23', '2024-11-23 12:49:06', '2024-11-23 12:49:06', 'Proses', '7c44307a66c1458511ca2365db4c07215.jpg');
 
 -- --------------------------------------------------------
 
@@ -143,12 +147,18 @@ INSERT INTO `transaction_pethotel` (`transaction_id`, `user_id`, `id_cat`, `date
 (11, 1, 2, '2024-11-18', '2024-11-20', 0, 1, 'BNI', 'llumna', '2024-11-18 13:52:12', 0, 'Belum Terbayar', ''),
 (12, 1, 7, '2024-11-18', '2024-11-21', 0, 0, 'BRI', 'n,,,mn', '2024-11-18 13:38:42', 0, 'Belum Terbayar', ''),
 (13, 1, 7, '2024-11-18', '2024-11-21', 0, 0, 'BRI', 'n,,,mn', '2024-11-18 13:38:46', 0, 'Belum Terbayar', ''),
-(14, 1, 2, '2024-11-18', '2024-11-21', 0, 3, 'BRI', ' ,bn ', '2024-11-20 04:25:51', 0, 'Proses', 'unnamed.png'),
+(14, 1, 2, '2024-11-23', '2024-11-21', 0, 3, 'BRI', ' ,bn ', '2024-11-25 06:58:22', 0, 'Selesai', 'unnamed.png'),
 (15, 1, 7, '2024-11-20', '2024-11-22', 1, 2, 'BRI', 'halo semua', '2024-11-20 05:58:07', 0, 'Belum Terbayar', ''),
 (16, 1, 8, '2024-11-20', '2024-11-22', 1, 0, 'BRI', 'test', '2024-11-20 06:07:25', 0, 'Belum Terbayar', ''),
 (17, 1, 8, '2024-11-20', '2024-11-26', 1, 0, 'BRI', 'jangan jangan jangan', '2024-11-20 06:15:32', 0, 'Belum Terbayar', ''),
 (18, 1, 8, '2024-11-20', '2024-11-23', 1, 2, 'BRI', 'lajams', '2024-11-20 06:51:27', 0, 'Belum Terbayar', ''),
-(19, 1, 7, '2024-11-20', '2024-11-23', 1, 2, 'BRI', 'lukman agun Prakoso', '2024-11-20 14:44:32', 215000, 'Belum Terbayar', '');
+(19, 1, 7, '2024-11-20', '2024-11-23', 1, 2, 'BRI', 'lukman agun Prakoso', '2024-11-20 14:44:32', 215000, 'Belum Terbayar', ''),
+(20, 1, 8, '2024-11-21', '2024-11-23', 1, 3, 'BNI', 'lukman agun prakoso', '2024-11-23 13:22:59', 170000, 'Proses', 'I-Saku.jpg'),
+(21, 1, 8, '2024-11-21', '2024-11-23', 1, 3, 'BRI', 'ssds', '2024-11-23 13:21:06', 170000, 'Proses', 'hotel.jpg'),
+(22, 1, 8, '2024-11-21', '2024-11-23', 1, 3, 'BRI', 'hala', '2024-11-23 13:20:39', 170000, 'Proses', 'unnamed1.png'),
+(23, 1, 8, '2024-11-24', '2024-11-25', 0, 2, 'BRI', 'akjska', '2024-11-24 06:49:31', 180000, 'Sudah Terbayar', '7c44307a66c1458511ca2365db4c07211.jpg'),
+(24, 1, 7, '2024-11-23', '2024-11-25', 0, 2, 'BRI', 'Tanggal hari ini', '2024-11-23 10:34:01', 180000, 'Checkin', '7c44307a66c1458511ca2365db4c0721.jpg'),
+(25, 1, 8, '2024-11-25', '2024-11-27', 0, 3, 'BCA', 'asasa', '2024-11-25 07:32:20', 180000, 'Proses', 'kucing.jpg');
 
 -- --------------------------------------------------------
 
@@ -236,13 +246,13 @@ ALTER TABLE `service_grooming`
 -- AUTO_INCREMENT untuk tabel `transaction_grooming`
 --
 ALTER TABLE `transaction_grooming`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaction_pethotel`
 --
 ALTER TABLE `transaction_pethotel`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
