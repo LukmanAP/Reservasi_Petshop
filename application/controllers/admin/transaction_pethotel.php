@@ -33,6 +33,12 @@
 		redirect('admin/transaction_pethotel/transaksi_hari_ini');
 	}
 
+	public function update_status_checkout($transaction_id) {
+		$this->model_transaction_pethotel->update_status_checkout($transaction_id);
+
+		redirect(('admin/transaction_pethotel/transaksi_berlangsung'));
+	}
+
 	public function transaksi_berlangsung() {
 
 		$data['transaksi'] = $this->model_transaction_pethotel->transaksi_berlangsung();
@@ -42,6 +48,36 @@
 		$this->load->view('admin/pethotel/transaksi_berlangsung', $data);
 		$this->load->view('tamplates_admin/footer');
 
+	}
+
+	public function transaksi_selesai() {
+
+		$data['transaksi'] = $this->model_transaction_pethotel->transaksi_selesai();
+
+		$this->load->view('tamplates_admin/header');
+		$this->load->view('tamplates_admin/sidebar');
+		$this->load->view('admin/pethotel/transaksi_selesai',$data);
+		$this->load->view('tamplates_admin/footer');
+	}
+
+	public function search_user() {
+		$name = $this->input->get('search'); 
+		$data['transaksi'] = $this->model_transaction_pethotel->search_user($name);
+
+		$this->load->view('tamplates_admin/header');
+		$this->load->view('tamplates_admin/sidebar');
+		$this->load->view('admin/pethotel/transaksi_selesai',$data);
+		$this->load->view('tamplates_admin/footer');
+	}
+
+	public function detail_data($transaction_id) {
+		$data['detail'] = $this-> model_transaction_pethotel->detail_data($transaction_id);
+
+
+		$this->load->view('tamplates_admin/header');
+		$this->load->view('tamplates_admin/sidebar');
+		$this->load->view('admin/pethotel/detail_data', $data);
+		$this->load->view('tamplates_admin/footer');
 	}
 
 

@@ -51,6 +51,7 @@
 					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_pethotel/tampil_pembayaran') ?>">Proses Pembayaran</a></li>
 					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_pethotel/transaksi_hari_ini') ?>">Transaksi hari ini</a></li>
 					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_pethotel/transaksi_berlangsung') ?>">Sedang berlangsung</a></li>
+					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_pethotel/transaksi_selesai') ?>">Transaksi Selesai</a></li>
 				</ul>
             </li>
 

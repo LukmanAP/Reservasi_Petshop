@@ -10,7 +10,6 @@
 			<th>Tanggal Checkin</th>
 			<th>Tanggal Checkout</th>
 			<th>Bukti</th>
-			<th>Aksi</th>
 		</tr>
 		<?php if(empty($transaksi)): ?>
             <tr>
@@ -29,11 +28,6 @@
 					<a href="#" data-bs-toggle="modal" data-bs-target="#imageModal<?php echo $tr->transaction_id; ?>">
 							<img style="height: 100px; width: 80px;" src="<?php echo base_url().'././assets/bukti_pethotel/'.$tr->image?>" alt="">
 						</a>
-					</td>
-					<td>
-					<?php if ($tr->status == 'Proses'): ?>
-						<div class="btn btn-primary btn-sm">Selesai</div>
-					<?php endif ?>
 					</td>
 				</tr>
 

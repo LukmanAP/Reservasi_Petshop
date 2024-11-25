@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<h3>Proses Status Pembayaran</h3>
+	<h3>Proses Status Pembayaran Grooming</h3>
 
 	<table class="table table-bordered table-hover table-striped text-center">
 		<tr>

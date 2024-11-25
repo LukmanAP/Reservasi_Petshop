@@ -25,7 +25,7 @@
 					<td><?php echo $tr->grooming_name ?></td>
 					<td><?php echo $tr->notes; ?></td>
 					<td style="width: 150px;">
-					<a href="<?php echo site_url(''.$tr->transaction_id) ?>"><div class="btn btn-primary btn-sm">Checkout</div></a>
+					<a href="<?php echo site_url('admin/transaction_pethotel/update_status_checkout/'.$tr->transaction_id) ?>"><div class="btn btn-primary btn-sm">Checkout</div></a>
 					</td>
 				</tr>
 			<?php endforeach; ?>

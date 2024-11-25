@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<h1>Transaksi Keseluruhan</h1>
+	<h1>Transaksi Keseluruhan Grooming</h1>
 
 	<table class="table table-bordered table-hover table-striped text-center">
 		<tr>
@@ -24,7 +24,7 @@
 					<td><?php echo $tr->grooming_name ?></td>
 					<td><?php echo $tr->date; ?></td>
 					<td>
-					<a href="<?php echo site_url('') ?>"><div class="btn btn-success btn-sm"><i class="fa-solid fa-check mx-1"></i>DEtail</div></a>
+						<a href="<?php echo site_url('admin/transaction_grooming/update_status_selesai1/'.$tr->transaction_id) ?>"><div class="btn btn-success btn-sm"><i class="fa-solid fa-check mx-1"></i>Selesai</div></a>
 					</td>
 				</tr>
 			<?php endforeach; ?>

@@ -3,15 +3,24 @@
         <h1>Penitipan Hewan</h1>
     </div>
     <form action="<?php echo base_url().'pethotel/form_pethotel/reservasi_pethotel/'.$this->session->userdata('user_id'); ?>" method="post" id="bookingForm">
-        <div class="mb-3">
-            <label for="id_cat" class="form-label">Kucing Anda:</label>
-            <select name="id_cat" id="id_cat" class="form-control" required>
-                <option value="" disabled selected class="text-muted">Pilih kucing anda</option>
-                <?php foreach ($cats as $cat): ?>
-                    <option value="<?php echo $cat->cat_id; ?>"><?php echo $cat->name; ?></option>
-                <?php endforeach; ?>
-            </select>
-        </div>
+		<label class="form-label">Pilih Kucing Anda:</label>
+		<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+			<?php foreach ($cats as $cat): ?>
+				<div class="col">
+					<div class="card h-100 cat-card">
+						<img src="<?php echo base_url('assets/cats/'.$cat->image); ?>" class="card-img-top cat-image" alt="<?php echo $cat->name; ?>">
+						<div class="card-body p-2">
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="id_cat" id="cat_<?php echo $cat->cat_id; ?>" value="<?php echo $cat->cat_id; ?>" required>
+								<label class="form-check-label" for="cat_<?php echo $cat->cat_id; ?>">
+									<?php echo $cat->name; ?>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php endforeach; ?>
+    	</div>
 
         <div class="mb-3 date-picker-container">
             <label for="date_range" class="form-label">Tanggal Penitipan:</label>
