@@ -66,7 +66,7 @@
 			$this->db->join('users', 'users.user_id = transaction_grooming.user_id');
 			$this->db->join('cats', 'cats.cat_id = transaction_grooming.id_cat');
 			$this->db->join('service_grooming', 'service_grooming.id_grooming = transaction_grooming.grooming_id');
-			
+			$this->db->where('transaction_grooming.transaction_id', $transaction_id);
 
 			$result = $this->db->get();
 			return $result->result(); 

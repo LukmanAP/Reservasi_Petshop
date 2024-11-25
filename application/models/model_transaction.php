@@ -3,16 +3,21 @@
 	class Model_transaction extends CI_Model {
 		
 		public function tampil_transaksi($user_id) {
-			$this->db->select('transaction_grooming.*, cats.name as cat_name, service_grooming.name');
+			$this->db->select('transaction_grooming.*, cats.name as cat_name, service_grooming.name as grooming_name');
 			$this->db->from('transaction_grooming');
 			$this->db->join('cats', 'cats.cat_id = transaction_grooming.id_cat');
 			$this->db->join('service_grooming', 'service_grooming.id_grooming = transaction_grooming.grooming_id');
 			$this->db->where('transaction_grooming.user_id', $user_id);
-			$this->db->where('transaction_grooming.status = "Belum Terbayar" OR transaction_grooming.status = "Proses" OR transaction_grooming.status = "Sudah Terbayar"');
 
-			
-			$result = $this->db->get();
-			return $result->result();
+			// Group the OR conditions
+			$this->db->group_start();
+			$this->db->where('transaction_grooming.status', 'Belum Terbayar');
+			$this->db->or_where('transaction_grooming.status', 'Proses');
+			$this->db->or_where('transaction_grooming.status', 'Sudah Terbayar');
+			$this->db->group_end();
+
+    $result = $this->db->get();
+    return $result->result();
 		}
 
 		public function tampil_riwayat($user_id) {

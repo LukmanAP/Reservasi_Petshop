@@ -53,6 +53,7 @@
 				<input type="text" disabled selected class="form-control" value="Rp.<?php echo number_format($d->total_price) ?>"> 
 			</div>
 		</div>
-		<a href="<?php echo site_url('admin/transaction_pethotel/transaksi_selesai')?>" class="btn btn-danger mb-5 mt-2 ms-2">Kembali</a>
+		
 	<?php endforeach; ?>
+	<a href="<?php echo site_url('admin/transaction_pethotel/transaksi_selesai')?>" class="btn btn-danger mb-5 mt-2 ms-2">Kembali</a>
 </div>
