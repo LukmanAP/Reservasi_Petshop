@@ -18,7 +18,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">Grooming</h5>
                     
-                    <a href="<?php echo site_url('dashboard/grooming'); ?>" class="btn btn-primary">Learn More</a>
+                    <a href="<?php echo site_url('dashboard/grooming'); ?>" class="btn btn-primary">Lihat Detail</a>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">Pet Hotel</h5>
                 
-                    <a href="<?php echo site_url('pethotel/form_pethotel/form/'.$this->session->userdata('user_id')); ?>" class="btn btn-primary">Learn More</a>
+                    <a href="<?php echo site_url('pethotel/form_pethotel/form/'.$this->session->userdata('user_id')); ?>" class="btn btn-primary">Lihat Detail</a>
                 </div>
             </div>
         </div>

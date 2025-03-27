@@ -8,7 +8,6 @@
 		}
 
 		public function tampil_data_satuan() {
-			$this->db->where('layanan', 'satuan');
 			return $this->db->get('service_grooming');
 		}
 

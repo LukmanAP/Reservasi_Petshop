@@ -14,18 +14,25 @@
     <!-- Page level custom scripts -->
     <script src="<?php echo base_url() ?>assets/boostrap/js/demo/chart-area-demo.js"></script>
     <script src="<?php echo base_url() ?>assets/boostrap/js/demo/chart-pie-demo.js"></script>
-		<script>
-					function updateDateTime() {
-						var now = new Date();
-						var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-						var date = now.toLocaleDateString('id-ID', options);
-						var time = now.toLocaleTimeString('id-ID');
+	<script>
+		document.getElementById('tanggal').addEventListener('change', function() {
+			var tanggal = this.value; // Ambil nilai tanggal
+			var bulan = tanggal.substring(0, 7); // Ambil bagian tahun dan bulan (format Y-m)
+			document.getElementById('bulan').value = bulan; // Set nilai input tersembunyi
+		});
+	</script>
+	<script>
+		function updateDateTime() {
+			var now = new Date();
+			var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+			var date = now.toLocaleDateString('id-ID', options);
+			var time = now.toLocaleTimeString('id-ID');
 						
-						document.getElementById('datetime').innerHTML = date + ' - ' + time;
-					}
+				document.getElementById('datetime').innerHTML = date + ' - ' + time;
+			}
 				
-					setInterval(updateDateTime, 1000); // Update setiap 1 detik
-					updateDateTime(); // Panggil fungsi saat halaman pertama kali dimuat
-				</script>
+			setInterval(updateDateTime, 1000); // Update setiap 1 detik
+			pdateDateTime(); // Panggil fungsi saat halaman pertama kali dimuat
+	</script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 <div class="container">
-	<h1>ini transaction Pethotel</h1>
+	<h1>Proses Pembayaran Pethotel</h1>
 
 
 	<div class="d-flex flex-row-reverse bd-higlight mb-2">
@@ -41,7 +41,11 @@
 						<?php elseif ($tr->status == 'Proses'): ?>
 							<div class="btn btn-warning btn-sm">Sedang di Proses</div>
 						<?php elseif ($tr->status == 'Sudah Terbayar'): ?>
-							<div class="btn btn-success btn-sm">Sudah Terbayar</div>
+							<a href="<?php echo site_url('pethotel/transaction_pethotel/bukti_pembayaran/'.$tr->transaction_id) ?>">
+							<div class="btn btn-primary btn-sm">Sudah Terbayar</div>
+							</a>
+						<?php elseif ($tr->status == 'Checkin'): ?>
+							<div class="btn btn-light btn-sm">Sedang Menginap</div>
 						<?php endif; ?>
 					</td>
 				</tr>

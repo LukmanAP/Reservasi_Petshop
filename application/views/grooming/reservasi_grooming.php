@@ -5,10 +5,11 @@
 		<h1><?php echo $grooming->name ?></h1>
 	</div>
 	<hr>
+
 	<form method="post" action="<?php echo base_url().'grooming/pesan_grooming/'.$grooming->id_grooming.'/'.$this->session->userdata('user_id') ?>">
-		<div>
-		<div class="mb-3">
-		<label class="form-label">Pilih Kucing Anda:</label>
+	<div>
+	<div class="mb-3">
+	<label class="form-label">Pilih Kucing Anda:</label>
     <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
         <?php foreach ($cats as $cat): ?>
             <div class="col">
@@ -39,6 +40,10 @@
 					<option value="BCA">BCA</option>
 				</select>
 			</div>
+			<div style="display: none;">
+				<input type="text" name="price" value="<?php echo $grooming->price ?>">
+			</div>
+
 			<div class="mb-3">
 				<label for="" class="form-label">Catatan:</label>
 				<textarea class="form-control" name="notes" id="" rows="3"></textarea>
@@ -46,5 +51,8 @@
 		</div>
 			<button type="submit" class="btn btn-primary mt-3" h>Pesan Sekarang</button>
 	</form>
+ 
+
+	
 </div>
 

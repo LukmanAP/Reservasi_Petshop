@@ -48,5 +48,23 @@
 			return $this->db->update('transaction_grooming', $data);
 		}
 
+		public function batalkan_transaksi_melewati_batas() {
+			// Ambil waktu sekarang
+			$sekarang = date('Y-m-d H:i:s');
+		
+			// Cari transaksi yang melewati batas waktu dan statusnya masih "Belum Terbayar"
+			$this->db->where('status', 'Belum Terbayar');
+			$this->db->where('payment_due_date <', $sekarang);
+			$transaksi_kadaluarsa = $this->db->get('transaction_grooming')->result();
+		
+			// Jika ada transaksi yang kadaluarsa, ubah statusnya menjadi "Dibatalkan"
+			if (!empty($transaksi_kadaluarsa)) {
+				foreach ($transaksi_kadaluarsa as $transaksi) {
+					$this->db->where('transaction_id', $transaksi->transaction_id);
+					$this->db->update('transaction_grooming', array('status' => 'Dibatalkan'));
+				}
+			}
+		}
+
 	}
 ?>

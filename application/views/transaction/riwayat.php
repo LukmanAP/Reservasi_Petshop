@@ -26,7 +26,7 @@
 					<td><?php echo $tr->date ?></td>
 					<td>
 					<?php if ($tr->status == 'Selesai'): ?>
-						<div class="btn btn-primary btn-sm">Selesai</div>
+						<div class="btn btn-secondary btn-sm">Selesai</div>
 					<?php endif ?>
 					</td>
 						

@@ -3,7 +3,7 @@
 
 		public function __construct() {
 			parent:: __construct();
-
+			
 			if ($this->session->userdata('role_id') != 1){
 				redirect('auth/login');
 			}
@@ -23,6 +23,7 @@
 			$id_cat = $this->input->post('id_cat');
 			$date = $this->input->post('date');
 			$bank = $this->input->post('bank');
+			$price = $this->input->post('price');
 			$notes = $this->input->post('notes');
 			$date = $this->input->post('date');
 			$transaction_date = date('Y-m-d H:i:s');
@@ -34,6 +35,7 @@
 				'id_cat' => $id_cat,
 				'date' => $date,
 				'bank' => $bank,
+				'price' => $price,
 				'notes' => $notes,
 				'transaction_date' => $transaction_date,
 				'payment_due_date' => $payment_due_date,

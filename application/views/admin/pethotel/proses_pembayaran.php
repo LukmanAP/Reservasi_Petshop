@@ -9,7 +9,7 @@
 			<th>nama Pet</th>
 			<th>Tanggal Checkin</th>
 			<th>Tanggal Checkout</th>
-			<th>Bukti</th>
+			<th>Bukti</th>w
 		</tr>
 		<?php if(empty($transaksi)): ?>
             <tr>

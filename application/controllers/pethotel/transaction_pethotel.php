@@ -83,6 +83,41 @@
 			$this->load->view('tamplates/footer');
 		}
 
+		public function bukti_pembayaran($transaction_id) {
+			$transaksi = $this->model_pethotel->data_transaksi($transaction_id);
+
+			$check_in = new DateTime($transaksi->date_checkin);
+			$check_out = new DateTime($transaksi->date_checkout);
+			$interval = $check_in->diff($check_out);
+			$days = $interval->days;
+
+			$cat_name = $transaksi->cat_name;
+
+			$daily_rate = 50000;
+   			$stay_cost = $days * $daily_rate;
+
+			$food_cost = $transaksi->bring_food == 1 ? ($stay_cost * 10 / 100) : 0;
+
+			$grooming_cost = $transaksi->grooming_price;
+
+			$total_cost = $stay_cost - $food_cost + $grooming_cost;
+
+			$data = [
+				'transaksi' => $transaksi,
+				'cat_name' => $cat_name,
+				'days' => $days,
+				'stay_cost' => $stay_cost,
+				'food_cost' => $food_cost,
+				'grooming_cost' => $grooming_cost,
+				'total_cost' => $total_cost
+			];
+
+			$this->load->view('tamplates/header');
+			$this->load->view('tamplates/navbar');
+			$this->load->view('pethotel/bukti_pembayaran', $data);
+			$this->load->view('tamplates/footer');
+		}
+
 	}
 
 

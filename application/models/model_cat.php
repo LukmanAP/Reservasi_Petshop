@@ -16,6 +16,13 @@
 			return $result->result();
 		}
 
+		public function ambil_data_row($id_cat) {
+			$this->db->where('cat_id', $id_cat);
+			$query = $this->db->get('cats');
+
+			return $query->row();
+		}
+
 		public function add_data_cat($data, $table) {
 			$this->db->insert($table, $data);
 		}

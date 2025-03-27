@@ -43,7 +43,6 @@
 				<label for="">Tanggal Transaksi</label>
 				<input type="text" disabled selected class="form-control" value="<?php echo $d->transaction_date  ?>"> 
 			</div>
-			
 		</div>
 
 	<?php endforeach; ?>

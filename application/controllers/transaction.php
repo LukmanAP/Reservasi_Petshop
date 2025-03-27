@@ -57,6 +57,22 @@
 			redirect('transaction/tampil_transaksi_grooming/'.$this->session->userdata('user_id'));
 
 		}
+
+		public function cek_transaksi_kadaluarsa() {
+			$this->load->model('model_transaction');
+			$this->model_transaction->batalkan_transaksi_melewati_batas();
+			echo "Transaksi kadaluarsa telah diperiksa dan statusnya diubah menjadi 'Dibatalkan'.";
+		}
+
+		public function bukti_pembayaran($transaction_id) {
+			
+			$data['transaksi'] = $this->model_transaction->data_transaksi($transaction_id);
+
+			$this->load->view('tamplates/header');
+			$this->load->view('tamplates/navbar');
+			$this->load->view('transaction/bukti_pembayaran',$data);
+			$this->load->view('tamplates/footer');
+		}
 	}
 
 ?>

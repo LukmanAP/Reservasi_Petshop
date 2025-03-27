@@ -49,11 +49,33 @@
 				</button>	
 				<ul class="dropdown-menu">
 					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_pethotel/tampil_pembayaran') ?>">Proses Pembayaran</a></li>
-					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_pethotel/transaksi_hari_ini') ?>">Transaksi hari ini</a></li>
+					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_pethotel/transaksi_hari_ini') ?>">Checkin hari ini</a></li>
 					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_pethotel/transaksi_berlangsung') ?>">Sedang berlangsung</a></li>
 					<li><a class="dropdown-item" href="<?php echo base_url('admin/transaction_pethotel/transaksi_selesai') ?>">Transaksi Selesai</a></li>
 				</ul>
             </li>
+
+			<li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('admin/layanan_grooming/layanan_grooming') ?>">
+                    <i class="fas fa-fw fa-database"></i>
+                    <span>Layanan Grooming</span></a>
+            </li>
+
+			<li class="nav-item">
+				<button type="button" class="dropdown-toggle nav-link btn-group dropend" data-bs-toggle="dropdown" aria-expanded="false">
+				<i class="fa-solid fa-money-bill"></i> Laporan
+				</button>	
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="<?php echo base_url('admin/laporan/laporan_grooming') ?>">Laporan Grooming</a></li>
+					<li><a class="dropdown-item" href="<?php echo base_url('admin/laporan/laporan_pethotel') ?>">Laporan Pet Hotel</a></li>
+				</ul>
+            </li>
+
+			<!-- <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('admin/laporan/data_laporan') ?>">
+                    <i class="fas fa-fw fa-money-bill "></i>
+                    <span>Laporan</span></a>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

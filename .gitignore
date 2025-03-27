@@ -1,5 +1,8 @@
 .DS_Store
 
+# Ignore vendor directory in libraries
+/application/libraries/vendor/
+
 application/cache/*
 !application/cache/index.html
 

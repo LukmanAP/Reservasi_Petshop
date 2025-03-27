@@ -21,8 +21,8 @@
 					<input type="text" class="form-control" name="breed" value="<?php echo $cat->breed ?>">
 				</div>
 				<div class="form-group mt-3">
-					<label for="">Umur</label>
-					<input type="text" class="form-control" name=" age" value="<?php echo $cat->age ?>">
+					<label for="">Tanggal lahir cat</label>
+					<input type="date" class="form-control" name="tgl_cat" value="<?php echo $cat->tgl_cat ?>">
 				</div>
 				<div class="form-group mt-3">
 					<label for="">Jenis Kelamin</label>

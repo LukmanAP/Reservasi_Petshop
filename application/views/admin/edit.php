@@ -11,7 +11,7 @@
 	
 	<?php foreach ($users as $user): ?>
 		<div style="max-width: 700px;">
-		<form method="post" action="<?php echo base_url().'admin/controller_users/edit_data/'.$user->user_id ?>"" enctype="multipart/form-data">
+		<form method="post" action="<?php echo base_url().'admin/controller_users/edit_data/'.$user->user_id ?>" enctype="multipart/form-data">
 			<div class="form-group mt-3">
 				<label for="">Nama:</label>
 				<input type="text" class="form-control" name="name" value="<?php echo $user->name ?>">

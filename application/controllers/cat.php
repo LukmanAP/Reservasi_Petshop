@@ -57,7 +57,7 @@
 		public function update_data_cat($cat_id, $user_id) {
 			$name = $this->input->post('name');
 			$breed = $this->input->post('breed');
-			$age = $this->input->post('age');
+			$tgl_cat = $this->input->post('tgl_cat');
 			$gender = $this->input->post('gender');
 			$sertivikat = $_FILES['sertivikat']['name'];
 			$image = $_FILES['image']['name'];
@@ -65,7 +65,7 @@
 			$data = array(
 				'name' => $name,
 				'breed' => $breed,
-				'age' => $age,
+				'tgl_cat' => $tgl_cat,
 				'gender' => $gender,
 			);
 
@@ -103,7 +103,7 @@
 		public function add_data_cat($user_id) {
 			$name = $this->input->post('name');
 			$breed = $this->input->post('breed');
-			$age = $this->input->post('age');
+			$tgl_cat = $this->input->post('tgl_cat');
 			$gender = $this->input->post('gender');
 			$sertivikat = $_FILES['sertivikat']['name'];
 			$image = $_FILES['image']['name'];
@@ -139,7 +139,7 @@
 				'user_id' => $user_id,
 				'name' => $name,
 				'breed' => $breed,
-				'age' => $age,
+				'tgl_cat' => $tgl_cat,
 				'gender' => $gender,
 				'sertivikat' => $sertivikat,
 				'image' => $image,

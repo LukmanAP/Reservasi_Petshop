@@ -27,6 +27,7 @@
 			$this->db->where('transaction_pethotel.status', 'Belum Terbayar');
 			$this->db->or_where('transaction_pethotel.status', 'Proses');
 			$this->db->or_where('transaction_pethotel.status', 'Sudah Terbayar');
+			$this->db->or_where('transaction_pethotel.status', 'Checkin');
 			$this->db->group_end();
 		
 			$result = $this->db->get();
@@ -61,6 +62,8 @@
 			return $result->result();
 
 		}
+
+		
 	}
 
 ?>

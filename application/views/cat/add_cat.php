@@ -16,8 +16,8 @@
 				<input type="text" class="form-control" name="breed">
 			</div>
 			<div class="form-group mt-3">
-				<label for="">Umur Kucing</label>
-				<input type="text" class="form-control" name="age">
+				<label for="tgl_lhr">Tanggal lahir</label>
+				<input type="date" class="form-control" name="tgl_cat" id="tgl_lhr">
 			</div>
 			<div class="form group mt-3">
 				<label for="">Jenis Kelamin</label>

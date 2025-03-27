@@ -1,46 +1,44 @@
 <?php 
 	class Auth extends CI_Controller{
 		public function login() {
-
-			$this->form_validation->set_rules('email','Email','required',['required' => 'user name wajib di isi !!']);
-			$this->form_validation->set_rules('password','Password','required',['required' => 'password	 name wajib di isi !!']);
-			
-			if ($this->form_validation->run() == FALSE)
-			{
+			$this->form_validation->set_rules('email', 'Email', 'required', ['required' => 'Email wajib diisi!!']);
+			$this->form_validation->set_rules('password', 'Password', 'required', ['required' => 'Password wajib diisi!!']);
+		
+			if ($this->form_validation->run() == FALSE) {
 				$this->load->view('tamplates/header');
 				$this->load->view('tamplates/navbar');
 				$this->load->view('auth/login');
 				$this->load->view('tamplates/footer');
 			} else {
 				$auth = $this->model_auth->cek_login();
-
-				if($auth == FALSE) {
-					$this->session->set_flashdata('pesan','
-					<div class="alert alert-warning alert-dismissible fade show" role="alert">
-						Username atau Password anda Salah !!
+		
+				if ($auth == FALSE) {
+					$this->session->set_flashdata('pesan', '
+						<div class="alert alert-danger alert-dismissible fade show" role="alert">
+							Email atau Password Anda Salah!!
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
-					</div>
-				');
-				redirect('auth/login');
-				}
-				else {
+						</div>
+					');
+					redirect('auth/login');
+				} else {
 					$this->session->set_userdata('user_id', $auth->user_id);
 					$this->session->set_userdata('name', $auth->name);
 					$this->session->set_userdata('role_id', $auth->role_id);
-					
-					switch($auth->role_id) {
+		
+					switch ($auth->role_id) {
 						case 1:
 							redirect('dashboard/index');
 							break;
 						case 2:
 							redirect('admin/dashboard/admin');
 							break;
-						default: break;
+						default:
+							break;
 					}
-				} 
-			}	
+				}
+			}
 		}
 
 		public function logout(){
