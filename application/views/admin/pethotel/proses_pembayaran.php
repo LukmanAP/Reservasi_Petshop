@@ -48,7 +48,11 @@
 								</div>
 								<div></div>
 								<div>
-								<button class="btn btn-danger mt-2">Batal</button>
+								<button type="button" class="btn btn-danger mt-2" data-bs-dismiss="modal">kembali</button>
+									<a href="<?php echo site_url('admin/transaction_pethotel/batalkan_status/'.$tr->transaction_id); ?>">
+										<button class="btn btn-danger mt-2">Batalkan</button>
+									</a>
+								
 								</div>
 							</div>
 						</div>

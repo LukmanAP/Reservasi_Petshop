@@ -18,6 +18,12 @@
 
 		}
 
+		public function batalkan_status($id_transaction) {
+			$this->model_transaction_grooming->batalkan_status($id_transaction);
+
+			redirect('admin/transaction_grooming/tampil_pembayaran');
+		}
+
 		public function transaksi_hari_ini() {
 
 			$data['transaksi'] = $this->model_transaction_grooming->transaksi_hari_ini();

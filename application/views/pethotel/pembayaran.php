@@ -98,7 +98,7 @@
 	<div class="mt-5 mb-5" style="text-align: center;">
 	<p>Upload Bukti Pembayaran</p>
 		<form action="<?php echo site_url('pethotel/transaction_pethotel/upload_bukti/'.$transaksi->transaction_id)?>" style="display: inline-block;" method="post" enctype="multipart/form-data">
-			<input type="file" name="bukti_pembayaran" class="form-control" style="width: 250px;">
+			<input type="file" name="bukti_pembayaran" class="form-control" style="width: 250px;" required>
 			<button type="submit" class="btn btn-primary mt-3">Upload</button>
 		</form>
 	</div>

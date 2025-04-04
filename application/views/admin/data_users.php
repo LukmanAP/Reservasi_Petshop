@@ -110,23 +110,23 @@
 			<form method="post" action="<?php echo base_url().'admin/controller_users/tambah_admin'?>">
 				<div class="form-group">
 					<label for="">Nama</label>
-					<input type="text" class="form-control" name="name" >
+					<input type="text" class="form-control" name="name" required>
 				</div>
 				<div class="form-group">
 					<label for="">email</label>
-					<input type="email" class="form-control" name="email">
+					<input type="email" class="form-control" name="email" required>
 				</div>
 				<div class="form-group">
 					<label for="">password</label>
-					<input type="text" class="form-control" name="password">
+					<input type="text" class="form-control" name="password" required>
 				</div>
 				<div>
 					<label for="">No.Hp</label>
-					<input type="text" class="form-control" name="phone">
+					<input type="text" class="form-control" name="phone" required>
 				</div>
 				<div>
 					<label for="">Alamat</label>
-					<input type="text" class="form-control" name="address">
+					<input type="text" class="form-control" name="address" required>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

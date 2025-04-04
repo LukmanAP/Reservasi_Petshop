@@ -1,11 +1,6 @@
 <?php
 
 	class Model_grooming extends CI_Model {
-		
-		public function tampil_data_paket() {
-			$this->db->where('layanan', 'paket');
-			return $this->db->get('service_grooming');
-		}
 
 		public function tampil_data_satuan() {
 			return $this->db->get('service_grooming');

@@ -17,6 +17,12 @@
 			redirect('admin/transaction_pethotel/tampil_pembayaran');
 	}
 
+	public function batalkan_status($transaction_id) {
+		$this->model_transaction_pethotel->batalkan_status($transaction_id);
+
+			redirect('admin/transaction_pethotel/tampil_pembayaran');
+	}
+
 	public function transaksi_hari_ini() {
 
 		$data['transaksi'] = $this->model_transaction_pethotel->transaksi_hari_ini();

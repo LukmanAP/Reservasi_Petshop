@@ -18,6 +18,11 @@
 			$this->db->update('transaction_pethotel', array('status' => 'Sudah Terbayar'));
 		}
 
+		public function batalkan_status($transaction_id) {
+			$this->db->where('transaction_id', $transaction_id);
+			$this->db->update('transaction_pethotel', array('status' => 'Dibatalkan'));
+		}
+
 		public function transaksi_hari_ini() {
 			$this->db->select('transaction_pethotel.*,cats.name as cat_name, service_grooming.name as grooming_name');
 			$this->db->from('transaction_pethotel');
