@@ -52,30 +52,37 @@
 	</div>
 
 	<table class="table table-bordered table-hover text-center">
-		<tr>
-			<th>No</th>
-			<th>Layanan Grooming</th>
-			<th>Catatan</th>
-			<th>Tanggal</th>
-			<th>Status</th>
-		</tr>
-		<?php $no = 1; ?>
-		<?php foreach ($riwayat_cat as $tr) :?>
-			
+    <tr>
+        <th>No</th>
+        <th>Layanan Grooming</th>
+        <th>Catatan</th>
+        <th>Tanggal</th>
+        <th>Status</th>
+    </tr>
+		<?php if (!empty($riwayat_cat)) : ?>
+			<?php $no = 1; ?>
+			<?php foreach ($riwayat_cat as $tr) : ?>
+				<tr>
+					<td><?php echo $no++ ?></td>
+					<td><?php echo $tr->name ?></td>
+					<td><?php echo $tr->notes ?></td>
+					<td><?php echo $tr->date ?></td>
+					<td>
+						<?php if ($tr->status == 'Selesai'): ?>
+							<div class="btn btn-primary btn-sm">Selesai</div>
+						<?php endif ?>
+					</td>
+				</tr>
+			<?php endforeach; ?>
+		<?php else : ?>
 			<tr>
-				<td><?php echo $no++ ?></td>
-				<td><?php echo $tr->name ?></td>
-				<td><?php echo $tr->notes ?></td>
-				<td><?php echo $tr->date ?></td>
-				<td>
-                <?php if ($tr->status == 'Selesai'): ?>
-					<div class="btn btn-primary btn-sm">Selesai</div>
-				<?php endif ?>
-					
-				
+				<td colspan="5" class="text-center py-4">
+					<div class="alert alert-info">
+						Kucing Anda belum memiliki transaksi
+					</div>
+				</td>
 			</tr>
-			
-		<?php endforeach; ?>
+		<?php endif; ?>
 	</table>
 
 

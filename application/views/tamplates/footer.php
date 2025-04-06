@@ -1,3 +1,67 @@
+<!-- Footer -->
+<footer class="bg-dark text-white pt-5 pb-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <!-- Kolom 1 - Tentang Kami -->
+            <div class="col-md-4 mb-4">
+                <h5 class="text-uppercase mb-4">Tentang Kami</h5>
+                <p>
+                    Dava Petshop & Pet care Semarang adalah platform yang menyediakan layanan grooming 
+                    dan perawatan kucing profesional untuk menjaga kesehatan dan kecantikan kucing kesayangan Anda.
+                </p>
+            </div>
+
+            <!-- Kolom 2 - Link Cepat -->
+            <div class="col-md-2 mb-4">
+                <h5 class="text-uppercase mb-4">Link Cepat</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="<?= base_url('dashboard/index') ?>" class="text-white">Beranda</a></li>
+                    <li class="mb-2"><a href="<?= base_url('dashboard/grooming') ?>" class="text-white">Grooming</a></li>
+                    <li class="mb-2"><a href="<?= base_url('pethotel/form_pethotel/form/'.$this->session->userdata('user_id')) ?>" class="text-white">Pethotel</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom 3 - Kontak -->
+            <div class="col-md-3 mb-4">
+                <h5 class="text-uppercase mb-4">Hubungi Kami</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <i class="fas fa-map-marker-alt me-2"></i> Jl. Jayengan No.6, Barusari. Semarang Tengah
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-phone me-2"></i> -
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-envelope me-2"></i> davapershop@gmail.com
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Kolom 4 - Sosial Media -->
+            <div class="col-md-3 mb-4">
+                <h5 class="text-uppercase mb-4">Ikuti Kami</h5>
+                <div class="social-links">
+                    <a href="" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="" class="text-white me-3"><i class="fab fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="row mt-3">
+            <div class="col-12 text-center">
+                <hr class="mb-4">
+                <p class="mb-0">&copy; <?= date('Y') ?> [Dava Petshop & Pet care. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

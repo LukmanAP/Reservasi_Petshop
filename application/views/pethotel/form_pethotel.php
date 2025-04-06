@@ -3,24 +3,30 @@
         <h1>Penitipan Hewan</h1>
     </div>
     <form action="<?php echo base_url().'pethotel/form_pethotel/reservasi_pethotel/'.$this->session->userdata('user_id'); ?>" method="post" id="bookingForm">
-		<label class="form-label">Pilih Kucing Anda:</label>
-		<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
-			<?php foreach ($cats as $cat): ?>
-				<div class="col">
-					<div class="card h-100 cat-card">
-						<img src="<?php echo base_url('assets/cats/'.$cat->image); ?>" class="card-img-top cat-image" alt="<?php echo $cat->name; ?>">
-						<div class="card-body p-2">
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="id_cat" id="cat_<?php echo $cat->cat_id; ?>" value="<?php echo $cat->cat_id; ?>" required>
-								<label class="form-check-label" for="cat_<?php echo $cat->cat_id; ?>">
-									<?php echo $cat->name; ?>
-								</label>
+	<label class="form-label">Pilih Kucing Anda:</label>
+		<?php if (!empty($cats)) : ?>
+			<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+				<?php foreach ($cats as $cat): ?>
+					<div class="col">
+						<div class="card h-100">
+							<img src="<?= base_url('assets/cats/'.$cat->image) ?>" class="card-img-top" alt="<?= $cat->name ?>" style="height: 120px; object-fit: cover">
+							<div class="card-body p-2">
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="id_cat" id="cat_<?= $cat->cat_id ?>" value="<?= $cat->cat_id ?>" required>
+									<label class="form-check-label" for="cat_<?= $cat->cat_id ?>">
+										<?= $cat->name ?>
+									</label>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			<?php endforeach; ?>
-    	</div>
+				<?php endforeach; ?>
+			</div>
+		<?php else : ?>
+			<div class="alert alert-warning">
+				Anda belum memiliki kucing. Silahkan <a href="<?= base_url('cat/add_cat') ?>" class="alert-link">tambah kucing</a> terlebih dahulu.
+			</div>
+		<?php endif; ?>
 
         <div class="mb-3 date-picker-container">
             <label for="date_range" class="form-label">Tanggal Penitipan:</label>

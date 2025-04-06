@@ -1,14 +1,14 @@
 <div class="container">
 
-	<div class="text-center my-5">
-		<?php if ($this->session->userdata('name')) { ?>
-			<div><h2>Selamat Datang, <?php echo $this->session->userdata('name'); ?></h2></div>
-		<?php } else { ?>
-			<h2>Selamat Datang!</h2>
-		<?php } ?>
-
-        
-    </div>
+<div class="text-center my-5 p-4 rounded">
+    <?php if ($this->session->userdata('name')) : ?>
+        <h3 class="text-primary">👋 Halo, <?= htmlspecialchars($this->session->userdata('name')) ?>!</h3>
+        <p class="text-muted">Senang bertemu denganmu lagi</p>
+    <?php else : ?>
+        <h3 class="text-primary">👋 Selamat Datang!</h3>
+        <p class="text-muted">Silakan login untuk mulai</p>
+    <?php endif; ?>
+</div>
 
 <div class="row justify-content-center">
         <!-- Grooming Card -->
