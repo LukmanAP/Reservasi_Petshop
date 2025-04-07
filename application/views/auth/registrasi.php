@@ -16,22 +16,34 @@
                             </div>
                             <form method="post" class="user" action="<?php echo base_url('auth/registrasi'); ?>">
 							<div class="form-group">
-                                    <input type="text" class="form-control form-control-user mb-3" id="exampleInputEmail"
+                                    <input type="text" class="form-control form-control-user mb-3"
                                         placeholder="Masukan nama anda" name="name">
 									
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user mb-3" id="exampleInputEmail"
+                                    <input type="email" class="form-control form-control-user mb-3"
                                         placeholder="Masukan email anda" name="email">
 										
                                 </div>
+								
 								<div class="form-group">
-                                    <input type="text" class="form-control form-control-user mb-3" id="exampleInputEmail"
-                                        placeholder="Masukan nomor telepon anda" name="phone">
-										
-                                </div>
+									<div class="input-group mb-3">
+										<span class="input-group-text">+62</span>
+										<input type="tel" class="form-control form-control-user" 
+											placeholder="Masukkan nomor telepon" 
+											name="phone" 
+											pattern="^8[1-9][0-9]{7,10}$" 
+											title="Masukkan nomor handphone Indonesia yang valid (contoh: 822 xxxx xxxx)"
+											required
+											>
+									</div>
+								<div class="invalid-feedback">Harap masukkan nomor handphone Indonesia yang valid (contoh: 81234567890)</div>
+								</div>
+
+
+
 								<div class="form-group">
-                                    <input type="text" class="form-control form-control-user mb-3" id="exampleInputEmail"
+                                    <input type="text" class="form-control form-control-user mb-3"
                                         placeholder="Masukan alamat anda" name="address">
 										
                                 </div>

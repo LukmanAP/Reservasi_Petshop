@@ -73,6 +73,12 @@
 			$this->load->view('transaction/bukti_pembayaran',$data);
 			$this->load->view('tamplates/footer');
 		}
+
+		public function hapus_transaksi($transaction_id) {
+			$this->model_transaction->hapus_transaksi($transaction_id);
+
+			redirect('transaction/tampil_transaksi_grooming/'.$this->session->userdata('user_id'));
+		}
 	}
 
 ?>

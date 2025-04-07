@@ -48,6 +48,15 @@
                                         <button type="button" class="btn btn-success ms-3">Bayar</button>
                                         </a>
                                     </div>
+								<?php elseif ($tr->status == 'Dibatalkan'):?>
+									<p class="mb-0"><i>Dibatalkan</i></p>
+									<a href="https://wa.me/6282248304762" target="_blank" class="btn btn-success btn-sm">
+    									<i class="fa-brands fa-whatsapp"></i>
+									</a>
+									<a href="<?php echo site_url('transaction/hapus_transaksi/'.$tr->transaction_id) ?>">
+									<div class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></div>
+                                    </a>
+									
                                 <?php elseif($tr->status == 'Proses'): ?>
                                     <div class="btn btn-warning btn-sm">Sedang di Proses</div>
                                 <?php elseif ($tr->status == 'Sudah Terbayar'): ?>

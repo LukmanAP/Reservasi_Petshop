@@ -4,7 +4,7 @@
 	</div>
 
 	<div class="text-center mt-5">
-		<p><i>Mohon Selesaikan Pemabayaran anda sebelum tanggal <b>ini hanya contoh</b> dengan rincian sebagai berikut</i></p>
+		<p><i>Mohon Selesaikan Pemabayaran anda dengan rincian sebagai berikut</i></p>
 	<hr>
 	</div>
 

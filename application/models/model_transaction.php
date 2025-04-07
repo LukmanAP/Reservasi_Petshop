@@ -14,6 +14,7 @@
 			$this->db->where('transaction_grooming.status', 'Belum Terbayar');
 			$this->db->or_where('transaction_grooming.status', 'Proses');
 			$this->db->or_where('transaction_grooming.status', 'Sudah Terbayar');
+			$this->db->or_where('transaction_grooming.status', 'Dibatalkan');
 			$this->db->group_end();
 
     $result = $this->db->get();
@@ -64,6 +65,11 @@
 					$this->db->update('transaction_grooming', array('status' => 'Dibatalkan'));
 				}
 			}
+		}
+
+		public function hapus_transaksi($transaction_id) {
+			$this->db->where('transaction_id', $transaction_id);
+        	$this->db->delete('transaction_grooming	');
 		}
 
 	}
