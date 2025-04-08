@@ -8,6 +8,7 @@
 			<th>Nama Pet</th>
 			<th>Layanan Grooming</th>
 			<th>Tanggal Grooming</th>
+			<th>Catatan</th>
 			<th>Status</th>
 		</tr>
 		<?php if(empty($transaksi)): ?>
@@ -23,6 +24,7 @@
 					<td><?php echo $tr->cat_name; ?></td>
 					<td><?php echo $tr->grooming_name ?></td>
 					<td><?php echo $tr->date; ?></td>
+					<td><?php echo $tr->notes ?></td>
 					<td>
 						<a href="<?php echo site_url('admin/transaction_grooming/update_status_selesai1/'.$tr->transaction_id) ?>"><div class="btn btn-success btn-sm"><i class="fa-solid fa-check mx-1"></i>Selesai</div></a>
 					</td>

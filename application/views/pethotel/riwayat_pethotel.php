@@ -13,13 +13,14 @@
                         <th>Nama Pet</th>
                         <th>Tanggal Checkin</th>
                         <th>Tanggal Checkout</th>
+						<th>Catatan</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if(empty($riwayat)): ?>
                         <tr>
-                            <td colspan="5" class="text-center py-5">
+                            <td colspan="6" class="text-center py-5">
                                 <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px;">
                                     <i class="fas fa-paw mb-3" style="font-size: 3rem; color: #6c757d;"></i>
                                     <h5 class="text-muted">Belum ada riwayat penitipan</h5>
@@ -35,9 +36,10 @@
                                 <td><?php echo $tr->cat_name ?></td>
                                 <td><?php echo $tr->date_checkin ?></td>
                                 <td><?php echo $tr->date_checkout ?></td>
+								<td><?php echo $tr->notes; ?></td>
                                 <td>
                                 <?php if ($tr->status == 'Selesai'): ?>
-                                    <span class="badge bg-success">Selesai</span>
+                                    <span class="badge bg-secondary">Selesai</span>
                                 <?php endif ?>
                                 </td>
                             </tr>

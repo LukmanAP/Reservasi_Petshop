@@ -72,5 +72,10 @@
         	$this->db->delete('transaction_grooming	');
 		}
 
+		public function hapus_transaksi1($transaction_id) {
+			$this->db->where('transaction_id', $transaction_id);
+        	$this->db->delete('transaction_pethotel	');
+		}
+
 	}
 ?>

@@ -51,20 +51,22 @@
 
 	<div class="row d-flex justify-content-center text-center mt-3 mb-5">
     <?php if (!empty($cats)) : ?>
-        <?php foreach ($cats as $cat) : ?>
-            <div class="col-6 card mx-2 mt-3 pt-3" style="width:18rem" href="">
-                <a href="<?php echo site_url('cat/detail_edit_cat/'.$cat->cat_id); ?>" class="text-decoration-none text-dark">
+    <?php foreach ($cats as $cat) : ?>
+        <div class="col-6 card mx-2 mt-3 pt-3" style="width:18rem">
+            <a href="<?php echo site_url('cat/detail_edit_cat/'.$cat->cat_id); ?>" class="text-decoration-none text-dark">
+                <div class="image-container" style="height: 250px; overflow: hidden; display: flex; justify-content: center; align-items: center;">
                     <?php if (!empty($cat->image)) : ?>
-                        <img src="<?php echo base_url().'./assets/cats/'.$cat->image ?>" alt="" class="card-img-top">
+                        <img src="<?php echo base_url().'./assets/cats/'.$cat->image ?>" alt="" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
                     <?php else : ?>
-                        <img src="<?php echo base_url().'./assets/cats/default1.jpg' ?>" alt="" class="card-img-top">
+                        <img src="<?php echo base_url().'./assets/home/default.png' ?>" alt="" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
                     <?php endif; ?>
-                    <div class="card-body">
-                        <h5 class="card-title mb-1"><?php echo $cat->name ?></h5>
-                    </div>
-                </a>
-            </div>
-        <?php endforeach; ?>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title mb-1"><?php echo $cat->name ?></h5>
+                </div>
+            </a>
+        </div>
+    <?php endforeach; ?>
     <?php else : ?>
         <div class="col-12 text-center py-5">
             <div class="alert alert-info" role="alert">

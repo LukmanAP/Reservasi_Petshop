@@ -9,7 +9,11 @@
 				<?php foreach ($cats as $cat): ?>
 					<div class="col">
 						<div class="card h-100">
-							<img src="<?= base_url('assets/cats/'.$cat->image) ?>" class="card-img-top" alt="<?= $cat->name ?>" style="height: 120px; object-fit: cover">
+								<?php if (!empty($cat->image)) : ?>
+									<img src="<?= base_url('assets/cats/'.$cat->image) ?>" class="card-img-top" alt="<?= $cat->name ?>" style="height: 120px; object-fit: cover">
+								<?php else: ?>
+									<img src="<?= base_url('assets/home/default.png') ?>" class="card-img-top" alt="<?= $cat->name ?>" style="height: 120px; object-fit: cover">
+								<?php endif; ?>
 							<div class="card-body p-2">
 								<div class="form-check">
 									<input class="form-check-input" type="radio" name="id_cat" id="cat_<?= $cat->cat_id ?>" value="<?= $cat->cat_id ?>" required>

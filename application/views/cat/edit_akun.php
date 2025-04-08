@@ -31,6 +31,7 @@
 			<div class="form-group mt-3">
 				<label for="">Foto Profil</label>
 				<input type="file" name="image" class="form-control">
+				<small class="text-muted">Format: <b>jpg|jpeg|png|gif</b>(maks. 2MB)</small>
 			</div>
 			<button type="submit" class="btn btn-primary mt-5">Update</button>
 			<a href="<?php echo site_url('cat/mycat/'.$user->user_id)?>" class="btn btn-danger mt-5 ms-2">Batal</a>

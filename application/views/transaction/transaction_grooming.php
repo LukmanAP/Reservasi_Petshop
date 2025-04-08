@@ -9,6 +9,18 @@
         </a>
     </div>
 
+	<?php if ($this->session->flashdata('error')): ?>
+    <div class="alert alert-danger">
+        <?php echo $this->session->flashdata('error'); ?>
+    </div>
+	<?php endif; ?>
+
+	<?php if ($this->session->flashdata('success')): ?>
+		<div class="alert alert-success">
+			<?php echo $this->session->flashdata('success'); ?>
+		</div>
+	<?php endif; ?>
+
     <div class="flex-grow-1">
         <div class="">
             <table class="table table-bordered table-hover table-striped text-center mb-0">
@@ -18,13 +30,14 @@
                         <th>Nama Pet</th>
                         <th>Layanan Grooming</th>
                         <th>Tanggal</th>
+						<th>Catatan</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if(empty($transaksi)): ?>
                         <tr>
-                            <td colspan="5" class="text-center py-5">
+                            <td colspan="6" class="text-center py-5">
                                 <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px;">
                                     <i class="fas fa-file-invoice mb-3" style="font-size: 3rem; color: #6c757d;"></i>
                                     <h5 class="text-muted">Tidak ada transaksi</h5>
@@ -40,6 +53,7 @@
                                 <td><?php echo $tr->cat_name;?></td>
                                 <td><?php echo $tr->grooming_name ?></td>
                                 <td><?php echo $tr->date ?></td>
+								<td><?php echo $tr->notes ?></td>
                                 <td>
                                 <?php if ($tr->status == 'Belum Terbayar'): ?>
                                     <div class="d-flex flex-row justify-content-center">

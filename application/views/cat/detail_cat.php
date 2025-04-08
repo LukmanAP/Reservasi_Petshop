@@ -9,7 +9,7 @@
 			<?php if (!empty($cat->image)) : ?>
                     <img style="height: 300px; width: 300px;" src="<?php echo base_url().'./assets/cats/'.$cat->image ?>" alt="" class="card-img-top">
                 <?php else : ?>
-                    <img style="height: 300px; width: 300px;" src="<?php echo base_url().'./assets/cats/default1.jpg' ?>" alt="" class="card-img-top">
+                    <img style="height: 300px; width: 300px;" src="<?php echo base_url().'./assets/home/default.png' ?>" alt="" class="card-img-top">
                 <?php endif; ?>
 			<form method="post" action="<?php echo site_url('cat/update_data_cat/'.$cat->cat_id.'/'.$this->session->userdata('user_id')) ?>" enctype="multipart/form-data">
 				<div class="form-group mt-3">
@@ -35,10 +35,12 @@
 				<div class="form-group mt-3">
 					<label for="">Sertivikat</label>
 					<input type="file" name="sertivikat" class="form-control">
+					<small class="text-muted">Format: PDF(maks. 2MB)</small>
 				</div>
 				<div class="form-group mt-3">
 					<label for="">Foto Kucing</label>
 					<input type="file" name="image" class="form-control">
+					<small class="text-muted">Format: <b>jpg|jpeg|png|gif</b>(maks. 2MB)</small>
 				</div>
 				<button type="submit" class="btn btn-primary mt-5 mb-5">Simpan</button>
 				<a href="<?php echo site_url('cat/hapus_data_cat/'.$cat->cat_id).'/'.$this->session->user_id ?>" class="btn btn-danger">Hapus Data</a>
@@ -84,8 +86,5 @@
 			</tr>
 		<?php endif; ?>
 	</table>
-
-
-
-
+		</div>
 </div>

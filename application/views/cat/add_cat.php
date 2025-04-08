@@ -30,12 +30,12 @@
             <div class="form-group mt-3">
                 <label for="">Sertifikat (opsional)</label>
                 <input type="file" name="sertivikat" class="form-control">
-                <small class="text-muted">Format: PDF, JPG, atau PNG (maks. 2MB)</small>
+                <small class="text-muted">Format: PDF (maks. 2MB)</small>
             </div>
             <div class="form-group mt-3">
                 <label for="">Foto Kucing</label>
-                <input type="file" name="image" class="form-control" required>
-                <small class="text-muted">Format: JPG atau PNG (maks. 2MB)</small>
+                <input type="file" name="image" class="form-control">
+                <small class="text-muted">Format: <b>jpg|jpeg|png|gif</b>  (maks. 2MB)</small>
             </div>
             <button type="submit" class="btn btn-primary mt-3">
                 <i class="fa-solid fa-plus"></i> Tambah Data Kucing

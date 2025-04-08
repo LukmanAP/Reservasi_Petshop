@@ -85,7 +85,7 @@
 			if ($image != '') {
 				
 				$config['upload_path'] = './assets/cats';
-				$config['allowed_types'] = 'jpg|png|gif';
+				$config['allowed_types'] = 'jpg|jpeg|png|gif|heic|HEIC';
 		
 				$this->load->library('upload', $config);
 				if (!$this->upload->do_upload('image')) {
@@ -125,7 +125,8 @@
 
 			if ($image==''){} else {
 				$config['upload_path'] = './assets/cats';
-				$config['allowed_types'] = 'jpg|png|gif';
+				$config['allowed_types'] = 'jpg|jpeg|png|gif|heic|HEIC';
+				
 
 				$this->load->library('upload',$config);
 				if(!$this->upload->do_upload('image')) {
@@ -168,8 +169,10 @@
 
 			if ($image != '') {
 				// Jika gambar diunggah
+				$config['max_size'] = 10240;
 				$config['upload_path'] = './assets/userprofile';
-				$config['allowed_types'] = 'jpg|png|gif';
+				$config['allowed_types'] = 'jpg|jpeg|png|gif|heic|HEIC';
+				
 		
 				$this->load->library('upload', $config);
 				if (!$this->upload->do_upload('image')) {

@@ -47,32 +47,48 @@
 		}
 
 		public function upload_bukti($transaction_id) {
-			$gambar = $_FILES['bukti_pembayaran']['name'];
-
-			if ($gambar == '') {
-				echo "Tidak ada file yang diunggah"; die;
-			} else {
-				$config['upload_path'] = './assets/bukti_pethotel';
-				$config['allowed_types'] = 'jpg|png|gif';
-
-				$this->load->library('upload', $config);
-
-				if (!$this->upload->do_upload('bukti_pembayaran')) {
-					echo "Upload Gagal"; die;
-				} else {
-					$gambar = $this->upload->data('file_name');
-				}
-
-				$data = array(
-					'image' => $gambar,
-					'status' => 'Proses'
-				);
-
-				$this->model_pethotel->upload_bukti($transaction_id, $data);
+			// Periksa apakah ada file yang diupload
+			if (empty($_FILES['bukti_pembayaran']['name'])) {
+				$this->session->set_flashdata('error', 'Tidak ada file yang diunggah');
+				redirect('pethotel/transaction_pethotel/tampil_transaction/'.$this->session->userdata('user_id'));
 			}
-
+		
+			// Dapatkan ekstensi file
+			$file_ext = pathinfo($_FILES['bukti_pembayaran']['name'], PATHINFO_EXTENSION);
+			$allowed_ext = ['jpg', 'jpeg', 'png', 'gif'];
+			
+			// Periksa ekstensi file
+			if (!in_array(strtolower($file_ext), $allowed_ext)) {
+				$this->session->set_flashdata('error', 'Format file tidak didukung. Hanya file JPG, JPEG, PNG, atau GIF yang diperbolehkan.');
+				redirect('pethotel/transaction_pethotel/tampil_transaction/'.$this->session->userdata('user_id'));
+			}
+		
+			// Konfigurasi upload
+			$config['upload_path'] = './assets/bukti';
+			$config['allowed_types'] = 'jpg|jpeg|png|gif';
+			$config['max_size'] = 2048; // 2MB
+			$config['encrypt_name'] = TRUE; // Enkripsi nama file
+		
+			$this->load->library('upload', $config);
+		
+			if (!$this->upload->do_upload('bukti_pembayaran')) {
+				$error = $this->upload->display_errors();
+				$this->session->set_flashdata('error', 'Upload gagal: '.$error);
+				redirect('pethotel/transaction_pethotel/tampil_transaction/'.$this->session->userdata('user_id'));
+			}
+		
+			// Jika upload berhasil
+			$upload_data = $this->upload->data();
+			$data = array(
+				'image' => $upload_data['file_name'],
+				'status' => 'Proses'
+			);
+		
+			$this->model_pethotel->upload_bukti($transaction_id, $data);
+			$this->session->set_flashdata('success', 'Bukti pembayaran berhasil diupload');
 			redirect('pethotel/transaction_pethotel/tampil_transaction/'.$this->session->userdata('user_id'));
 		}
+
 
 		public function riwayat_pethotel($user_id) {
 			$data['riwayat'] = $this->model_pethotel->riwayat_pethotel($user_id);

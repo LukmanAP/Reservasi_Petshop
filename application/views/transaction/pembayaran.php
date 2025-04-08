@@ -92,6 +92,7 @@
 					echo '
 					<p>Upload Bukti Pembayaran</p>
 					<form action="' . site_url('transaction/upload_bukti/' . $tr->transaction_id) . '" style="display: inline-block;" method="post" enctype="multipart/form-data">
+						<small class="text-muted">Format : <b>jpg|jpeg|png|gif</b> (maks. 2MB)</small>	
 						<input type="file" name="bukti_pembayaran" class="form-control" style="width: 250px;" required>
 						<button type="submit" class="btn btn-primary mt-3">Upload</button>
 					</form>
